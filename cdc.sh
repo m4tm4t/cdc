@@ -33,25 +33,22 @@ RubyCode
 
 # Prompt for devise scope
 read -p "Specify devise scope ('users' by default) : " SCOPE
-if [ -z "$SCOPE" ]
-  then 
-    SCOPE=$DEFAULT_SCOPE
+if [ -z "$SCOPE" ]; then 
+  SCOPE=$DEFAULT_SCOPE
 fi
 
 # Prompt for modules
 echo "Devise modules: ${DEFAULT_MODULES[@]}"
 read -p "Specify devise module(s) you want to override, separated by a space. (all by default) : " MODULES
-if [ -z "$MODULES" ]
-  then 
-    MODULES=(${DEFAULT_MODULES[@]})
+if [ -z "$MODULES" ]; then 
+  MODULES=(${DEFAULT_MODULES[@]})
 else
   MODULES=($MODULES)
 fi
 
 # Check for devise scope folder
-if [ ! -d "app/controllers/$SCOPE" ]
-  then
-    mkdir app/controllers/$SCOPE
+if [ ! -d "app/controllers/$SCOPE" ]; then
+  mkdir app/controllers/$SCOPE
 fi
 
 # Then create files & inject code
