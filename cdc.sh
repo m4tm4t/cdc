@@ -41,7 +41,8 @@ fi
 echo "Devise modules: ${DEFAULT_MODULES[@]}"
 read -p "Specify devise module(s) you want to override, separated by a space. (all by default) : " MODULES
 if [ -z "$MODULES" ]
-  then MODULES=(${DEFAULT_MODULES[@]})
+  then 
+    MODULES=(${DEFAULT_MODULES[@]})
 else
   MODULES=($MODULES)
 fi
