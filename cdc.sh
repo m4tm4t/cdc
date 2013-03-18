@@ -34,7 +34,8 @@ RubyCode
 # Prompt for devise scope
 read -p "Specify devise scope ('users' by default) : " SCOPE
 if [ -z "$SCOPE" ]
-  then SCOPE=$DEFAULT_SCOPE
+  then 
+    SCOPE=$DEFAULT_SCOPE
 fi
 
 # Prompt for modules
