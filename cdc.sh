@@ -59,4 +59,7 @@ for module in "${MODULES[@]}"
     cat > app/controllers/${SCOPE}/${module}_controller.rb <<EOF
 $(controller_template ${SCOPE[@]^} ${module[@]^})
 EOF
+
+echo "IMPORTANT: If you don't add your new controllers to routes.rb they WILL NOT be called"
+
 done
